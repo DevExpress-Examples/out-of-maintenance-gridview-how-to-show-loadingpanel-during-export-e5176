@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    function OnClick(s, e) {
+        $.ajax({
+            url: '@Url.Action("CallbackExport", "Home")',
+            type: "POST",
+            data: $("#form").serialize(),
+            beforeSend: (function (data) {
+                LoadingPanel.Show();
+            })
+        }).done(function (data) {
+            LoadingPanel.Hide();
+            $("#form").submit();
+        });
+    }
+</script>
+@using (Html.BeginForm("Export", "Home", FormMethod.Post, new { id = "form" })) {
+   
+    @Html.Action("GridViewPartial")
+    @Html.DevExpress().Button(settings => {
+    settings.Name = "btn";
+    settings.Text = "Export";
+    settings.ClientSideEvents.Click = "OnClick";
+}).GetHtml()
+}
+
+@Html.DevExpress().LoadingPanel(settings => {
+    settings.Name = "LoadingPanel";
+    settings.ContainerElementID = "form";
+}).GetHtml()
