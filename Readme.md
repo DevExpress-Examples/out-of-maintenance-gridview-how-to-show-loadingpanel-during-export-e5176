@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/exportPanel/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/exportPanel/Controllers/HomeController.vb))
+* [GridViewPartial.cshtml](./CS/exportPanel/Views/Home/GridViewPartial.cshtml)
+* [Index.cshtml](./CS/exportPanel/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # GridView - How to show LoadingPanel during export
 
 
