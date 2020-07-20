@@ -15,13 +15,12 @@
     }
 </script>
 @using (Html.BeginForm("Export", "Home", FormMethod.Post, new { id = "form" })) {
-   
     @Html.Action("GridViewPartial")
     @Html.DevExpress().Button(settings => {
-    settings.Name = "btn";
-    settings.Text = "Export";
-    settings.ClientSideEvents.Click = "OnClick";
-}).GetHtml()
+        settings.Name = "btn";
+        settings.Text = "Export";
+        settings.ClientSideEvents.Click = "OnClick";
+    }).GetHtml()
 }
 
 @Html.DevExpress().LoadingPanel(settings => {
